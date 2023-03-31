@@ -1,17 +1,15 @@
-const select = document.querySelector('#frutas');
 const input = document.querySelector('#buscar-frutas');
 
 input.addEventListener('input', () => {
   const value = input.value.toLowerCase();
-  const options = select.options;
+  const opciones = document.querySelectorAll('#opciones-frutas option');
 
-  for (let i = 0; i < options.length; i++) {
-    const option = options[i];
-
-    if (option.value.toLowerCase().includes(value)) {
-      option.hidden = false;
+  opciones.forEach((opcion) => {
+    if (opcion.value.toLowerCase().includes(value)) {
+      opcion.hidden = false;
     } else {
-      option.hidden = true;
+      opcion.hidden = true;
     }
-  }
+  });
 });
+

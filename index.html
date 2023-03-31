@@ -8,15 +8,16 @@
   </head>
   <body>
     <label for="frutas">Selecciona una fruta:</label>
-    <input type="text" id="buscar-frutas" placeholder="Buscar fruta..." />
-    <select id="frutas">
-      <option value="manzana">Manzana</option>
-      <option value="banana">Banana</option>
-      <option value="naranja">Naranja</option>
-      <option value="pera">Pera</option>
-      <option value="sandía">Sandía</option>
-      <option value="kiwi">Kiwi</option>
-      <option value="melón">Melón</option>
+    <input type="text" id="buscar-frutas" placeholder="Buscar fruta..." list="opciones-frutas">
+    <datalist id="opciones-frutas">
+      <option value="Manzana">
+      <option value="Banana">
+      <option value="Naranja">
+      <option value="Pera">
+      <option value="Sandía">
+      <option value="Kiwi">
+      <option value="Melón">
+    </datalist>    
     </select>
     <script src="app.js"></script>
   </body>
