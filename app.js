@@ -1,4 +1,5 @@
 const input = document.querySelector('#buscar-frutas');
+const select = document.querySelector('#frutas');
 
 input.addEventListener('input', () => {
   const value = input.value.toLowerCase();
@@ -12,4 +13,9 @@ input.addEventListener('input', () => {
     }
   });
 });
+
+select.addEventListener('change', () => {
+  input.value = select.value;
+});
+
 

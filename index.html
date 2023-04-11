@@ -7,10 +7,10 @@
     <title>Document</title>
   </head>
   <body>
+    <label for="buscar-frutas">Buscar fruta:</label>
+    <input type="text" id="buscar-frutas" placeholder="Escribe aquí el nombre de una fruta" />
     <label for="frutas">Selecciona una fruta:</label>
-    <input type="text" id="buscar-frutas" placeholder="Buscar fruta..." list="opciones-frutas">
-    <select>
-    <datalist id="opciones-frutas">
+    <select id="frutas">
       <option value="Manzana">Manzana</option>
       <option value="Banana">Banana</option>
       <option value="Naranja">Naranja</option>
@@ -18,8 +18,27 @@
       <option value="Sandía">Sandía</option>
       <option value="Kiwi">Kiwi</option>
       <option value="Melón">Melón</option>
-    </datalist>    
     </select>
-    <script src="app.js"></script>
+    <script>
+      const input = document.querySelector('#buscar-frutas');
+      const select = document.querySelector('#frutas');
+
+      input.addEventListener('input', () => {
+        const value = input.value.toLowerCase();
+        const opciones = document.querySelectorAll('#frutas option');
+
+        opciones.forEach((opcion) => {
+          if (opcion.value.toLowerCase().includes(value)) {
+            opcion.hidden = false;
+          } else {
+            opcion.hidden = true;
+          }
+        });
+      });
+
+      select.addEventListener('change', () => {
+        input.value = select.value;
+      });
+    </script>
   </body>
 </html>
